@@ -21,7 +21,24 @@ mod tests {
         assert_eq!(result, expected);
     }
 
-        #[test]
+    #[test]
+    fn test_parser_multiline() {
+        let data = String::from(
+            "test => line 1\n\
+             > line 2\n\
+             > line 3"
+        );
+        let result = parse(data);
+        let mut expected: HashMap<String, String> = HashMap::new();
+        expected.insert(
+            "test".to_string(),
+            "line 1\nline 2\nline 3".to_string()
+        );
+    
+        assert_eq!(result, expected);
+    }
+
+    #[test]
     fn test_interpreter() {
         let data = String::from("print => Sorbet");
         let result = interpret(data, false);
