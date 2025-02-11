@@ -16,7 +16,7 @@ pub fn parse(contents: String) -> HashMap<String, String> {
         } else {
             logger::print_error(
                 SorbetError::Syntax,
-                format!("Syntax error! Expected key => value at: {}", line)
+                format!("Syntax error! Expected [key] => [value] at: {}", line)
             );
         }
     }
