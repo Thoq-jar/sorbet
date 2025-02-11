@@ -4,7 +4,7 @@ mod interpreter;
 
 pub use logger::SorbetError;
 pub use parser::*;
-pub use interpreter;
+pub use interpreter::interpret;
 
 #[cfg(test)]
 mod tests {
@@ -24,7 +24,7 @@ mod tests {
         #[test]
     fn test_interpreter() {
         let data = String::from("print => Sorbet");
-        let result = interpreter::interpret(data, false);
+        let result = interpret(data, false);
         let mut expected: HashMap<String, String> = HashMap::new();
         expected.insert("print".to_string(), "Sorbet".to_string());
     
