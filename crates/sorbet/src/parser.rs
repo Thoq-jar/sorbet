@@ -1,7 +1,6 @@
+use crate::utility;
+use crate::utility::SorbetError;
 use std::collections::HashMap;
-use crate::logger;
-use crate::logger::SorbetError;
-
 
 pub fn parse(contents: String) -> HashMap<String, String> {
     let mut map: HashMap<String, String> = HashMap::new();
@@ -14,15 +13,15 @@ pub fn parse(contents: String) -> HashMap<String, String> {
                 map.insert(key.clone(), current_value.trim().to_string());
                 current_value.clear();
             }
-            
+
             let parts: Vec<&str> = line.split("=>").collect();
             if parts.len() == 2 {
                 current_key = Some(parts[0].trim().to_string());
                 current_value = parts[1].trim().to_string();
             } else {
-                logger::print_error(
+                utility::print_error(
                     SorbetError::Syntax,
-                    format!("Syntax error! Expected [key] => [value] at: {}", line)
+                    format!("Syntax error! Expected [key] => [value] at: {}", line),
                 );
             }
         } else if line.trim().starts_with('>') {
@@ -30,9 +29,9 @@ pub fn parse(contents: String) -> HashMap<String, String> {
                 current_value.push('\n');
                 current_value.push_str(line.trim_start().trim_start_matches('>').trim());
             } else {
-                logger::print_error(
-                    SorbetError::Syntax, 
-                    format!("Continuation line without a key at: {}", line)
+                utility::print_error(
+                    SorbetError::SyntaxException,
+                    format!("Continuation line without a key at: {}", line),
                 );
             }
         }

@@ -1,6 +1,5 @@
-[package]
-name = "sorbet"
-version = "1.0.0"
-edition = "2021"
-
-[dependencies]
+[workspace]
+members = [
+    "crates/*"
+]
+resolver = "2"
