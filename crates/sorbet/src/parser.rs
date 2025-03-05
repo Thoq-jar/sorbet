@@ -26,7 +26,7 @@ pub fn parse(contents: String) -> HashMap<String, String> {
             }
         } else if line.trim().starts_with('>') {
             if current_key.is_some() {
-                current_value.push('\n');
+                current_value.push(',');
                 current_value.push_str(line.trim_start().trim_start_matches('>').trim());
             } else {
                 utility::print_error(
