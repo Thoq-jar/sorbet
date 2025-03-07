@@ -1,3 +1,5 @@
+mod utility;
+
 use crate::utility::{
     convert_to_json,
     convert_to_kvp,
@@ -5,13 +7,13 @@ use crate::utility::{
     convert_to_xml
 };
 
-mod utility;
+use sorbet_kvp::sorbet;
 
 fn main() {
     let args: Vec<String> = std::env::args().collect::<Vec<String>>();
 
     if args.len() < 2 {
-        println!("Usage: sorbet [convert] [file.srb] [json/xml/properties]");
+        println!("Usage: sorbet [convert] [file.srb/sorbet] [json/xml/properties]");
         std::process::exit(1);
     }
 

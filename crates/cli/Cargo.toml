@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-sorbet = { version = "1.0.0", path = "../sorbet" }
+sorbet_kvp = { version = "1.0.0", path = "../sorbet_kvp" }

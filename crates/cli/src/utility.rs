@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 use std::fs;
+use sorbet_kvp::sorbet;
 
 pub fn convert_to_json(sorbet_file: &str) {
     let new_name: String = format!("{}.json", sorbet_file.trim_end_matches(".srb").trim_end_matches(".sorbet"));
