@@ -1,0 +1,9 @@
+[package]
+name = "sorbet_kvp"
+description = "A simple KVP file format"
+repository = "https://github.com/thoq-jar/sorbet"
+version = "1.0.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
