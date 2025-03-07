@@ -21,15 +21,15 @@ mod tests {
     #[test]
     fn test_parser_multiline() {
         let data: String = String::from(
-            "test => line 1\n\
-             > line 2\n\
-             > line 3"
+            r#"test => line 1
+             > line 2
+             > line 3"#
         );
         let result: HashMap<String, String> = parse(data);
         let mut expected: HashMap<String, String> = HashMap::new();
         expected.insert(
             "test".to_string(),
-            "line 1\nline 2\nline 3".to_string()
+            r#"line 1,line 2,line 3"#.to_string()
         );
     
         assert_eq!(result, expected);
