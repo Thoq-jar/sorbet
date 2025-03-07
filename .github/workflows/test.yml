@@ -1,4 +1,4 @@
-name: Nautilus Workflow
+name: Rust Test Workflow
 
 on:
   push:
