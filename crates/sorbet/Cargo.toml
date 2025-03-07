@@ -1,5 +1,5 @@
 [package]
-name = "sorbet"
+name = "sorbet-kvp"
 description = "A simple KVP file format"
 version = "1.0.0"
 edition = "2021"
