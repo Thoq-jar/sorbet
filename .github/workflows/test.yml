@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build Nautilus
+    - name: Build Sorbet
       run: cargo build --verbose
-    - name: Test Nautilus
+    - name: Test Sorbet
       run: cargo test --verbose
