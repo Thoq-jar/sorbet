@@ -4,4 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-sorbet_kvp = { version = "1.0.0", path = "../sorbet_kvp" }
+sorbet_kvp = { path = "../sorbet_kvp" }
+serde_json = "1.0"
+roxmltree = "0.20.0"
+configparser = "3.0.4"
